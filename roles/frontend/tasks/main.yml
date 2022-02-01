@@ -3,3 +3,9 @@
     name: nginx
     state: latest
 
+- name: Download Frontend from Git repo
+  ansible.builtin.unarchive:
+    src: https://github.com/roboshop-devops-project/frontend/archive/main.zip
+    dest: /tmp
+    remote_src: yes
+

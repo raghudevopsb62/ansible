@@ -1,3 +1,5 @@
-- name: Print
-  debug:
-    msg: Heloo from frontend
+- name: Install Nginx
+  ansible.builtin.yum:
+    name: nginx
+    state: latest
+

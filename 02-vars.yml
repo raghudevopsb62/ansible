@@ -57,3 +57,10 @@
       vars:
         URL: task.example.com
 
+## Print Hostname of remote node
+- name: Print Hostname of remote node
+  hosts: all
+  tasks:
+    - name: Print Hostname
+      ansible.builtin.debug:
+        msg: Hostname = {{ansible_hostname}}

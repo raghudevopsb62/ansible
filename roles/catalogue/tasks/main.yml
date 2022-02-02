@@ -42,4 +42,8 @@
 #```
 
 - name: Setup Repo file for NodeJS
-  ansible.builtin.shell: curl -fsSL https://rpm.nodesource.com/setup_lts.x | bash -
+  ansible.builtin.copy:
+    src: nodejs.repo
+    dest: /etc/yum.repos.d/nodejs.repo
+
+

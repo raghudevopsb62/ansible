@@ -21,6 +21,11 @@
     src: mongo.repo
     dest: /etc/yum.repos.d/mongo.repo
 
+- name: Install MongoDB
+  ansible.builtin.yum:
+    name: mongodb-org
+    state: installed 
+
 - name: Update MongoDB Listen address
   ansible.builtin.replace:
     path: /etc/mongod.conf

@@ -1,2 +1,2 @@
 --- FILES ---
-Hello Welcome to DevOps training
+Hello Welcome to {{COURSE}} training

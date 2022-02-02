@@ -16,3 +16,9 @@
   roles:
     - catalogue
 
+- name: Setup Redis Compoent
+  hosts: REDIS
+  become: yes
+  roles:
+    - redis
+

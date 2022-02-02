@@ -43,4 +43,3 @@
 
 - name: Setup Repo file for NodeJS
   ansible.builtin.shell: curl -fsSL https://rpm.nodesource.com/setup_lts.x | bash -
-  

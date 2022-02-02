@@ -11,4 +11,4 @@
         msg: Ubuntu
       tags:
         - ubuntu
-        
+# Note: tags can be applicable for plays also

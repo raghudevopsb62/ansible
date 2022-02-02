@@ -7,7 +7,7 @@
     msg: URL == {{URL}}
 
 - name: Copy a file
-  copy:
+  template:
     src: sample.txt
     dest: /tmp/sample.txt
 

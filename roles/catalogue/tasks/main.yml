@@ -1,12 +1,4 @@
 
-#1. So let's switch to the `roboshop` user and run the following commands.
-#
-#```bash
-#$ curl -s -L -o /tmp/catalogue.zip "https://github.com/roboshop-devops-project/catalogue/archive/main.zip"
-#$ cd /home/roboshop
-#$ unzip /tmp/catalogue.zip
-#$ mv catalogue-main catalogue
-#$ cd /home/roboshop/catalogue
 #$ npm install
 #
 #```
@@ -57,6 +49,11 @@
     src: /tmp/catalogue-main/
     dest: /home/roboshop/catalogue/
     remote_src: yes
+  become_user: roboshop
+
+- name: Install Catalogue Dependencies
+  community.general.npm:
+    path: /home/roboshop/catalogue
   become_user: roboshop
 
 

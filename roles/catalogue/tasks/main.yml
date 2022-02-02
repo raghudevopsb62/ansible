@@ -1,14 +1,4 @@
 
-#$ npm install
-#
-#```
-#
-#1. Update SystemD file with correct IP addresses
-#
-#Update `MONGO_DNSNAME` with MongoDB Server IP
-#
-#2. Now, lets set up the service with systemctl.
-#
 #```bash
 #  # mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service
 #  # systemctl daemon-reload
@@ -55,6 +45,18 @@
   community.general.npm:
     path: /home/roboshop/catalogue
   become_user: roboshop
+
+- name: Setup Catalogue SystemD Config File
+  ansible.builtin.template:
+    src: systemd.service
+    dest: /etc/systemd/system/catalogue.service
+
+- name: Start Catalogue service
+  ansible.builtin.systemd:
+    name: catalogue
+    state: restated
+    enabled: yes
+    daemon_reload: yes
 
 
 

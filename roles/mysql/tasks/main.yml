@@ -64,5 +64,12 @@
     state: started
     enabled: true
 
+- name: Find
+  ansible.builtin.slurp:
+    src: /var/log/mysqld.log
+  register: mysql_output
 
+- name: Print
+  debug:
+    msg: "{{mysql_output}}"
 

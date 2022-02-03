@@ -1,7 +1,7 @@
 - name: Conditions
   hosts: localhost
   vars:
-    a: 1
+    a: 11
     b: abc
     c: true
   tasks:
@@ -17,4 +17,4 @@
       debug:
         msg: c is true
       when: c
-             
+

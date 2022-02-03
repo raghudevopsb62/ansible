@@ -1,28 +1,4 @@
-#  MySQL is the database service which is needed for the application. So we need to install it and configure it for the application to work.
-#
-#    ## **Manual Steps to Install MySQL**
-#
-#    As per the Application need, we are choosing MySQL 5.7 version.
-#
-#    1. Setup MySQL Repo
-#
-#    ```bash
-#    # curl -s -L -o /etc/yum.repos.d/mysql.repo https://raw.githubusercontent.com/roboshop-devops-project/mysql/main/mysql.repo
-#    ```
-#
-#    1. Install MySQL
-#
-#    ```bash
-#    # yum install mysql-community-server -y
-#    ```
-#
-#    1. Start MySQL.
-#
-#    ```bash
-#    # systemctl enable mysqld
-#    # systemctl start mysqld
-#    ```
-#
+
 #    1. Now a default root password will be generated and given in the log file.
 #
 #    ```bash
@@ -71,4 +47,22 @@
 #    # cd mysql-main
 #    # mysql -u root -pRoboShop@1 <shipping.sql
 #    ```
+
+- name: Setup MySQL Repo
+  ansible.builtin.copy:
+    src: mysql.repo
+    dest: /etc/yum.repos.d/mysql.repo
+
+- name: Install MySQL Server
+  ansible.builtin.yum:
+    name: mysql-community-server
+    state: installed
+
+- name: Start MySQL Service
+  ansible.builtin.systemd:
+    name: mysqld
+    state: started
+    enabled: true
+
+
 

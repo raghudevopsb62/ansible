@@ -74,13 +74,11 @@
   ignore_errors: yes
   register: check_pass
 
-- name: Find the temporary password 
+- name: Find the temporary password
   ansible.builtin.shell: grep 'temporary password' /var/log/mysqld.log | awk '{print $NF}'
   register: mysql_output
   when: check_pass.failed
 
-- name: Print
-  debug:
-    msg: "{{mysql_output}}"
+- name: Change Default password
+  ansible.builtin.shell: mysql --connect-expired-password -uroot -p"{{mysql_output.stdout}}"
   when: check_pass.failed
-

@@ -4,7 +4,7 @@
     - name: Run uptime
       shell: uptime
       notify: Print
-      
+
   handlers:
     - name: Print
       debug:

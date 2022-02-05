@@ -2,7 +2,9 @@
   hosts: localhost
   tasks:
     - name: Run uptime
-      shell: uptime
+      #shell: uptime
+      debug:
+        msg: OK
       notify: Print
 
   handlers:

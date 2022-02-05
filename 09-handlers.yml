@@ -1,5 +1,5 @@
 - name: Handlers
-  hosts: all
+  hosts: localhost
   tasks:
     - name: Run uptime
       shell: uptime

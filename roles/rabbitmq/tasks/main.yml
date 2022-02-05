@@ -35,4 +35,3 @@
 
 - name: Set Previsleges for USer
   shell: rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*"
-  

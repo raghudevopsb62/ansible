@@ -1,9 +1,5 @@
 - name: Setup Component
   hosts: all
   become: yes
-  tasks:
-    - name: debug
-      debug:
-        msg: Helo 
   roles:
-    - frontend
+    - "{{COMPONENT}}"

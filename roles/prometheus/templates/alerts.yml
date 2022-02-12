@@ -24,4 +24,5 @@ groups:
       severity: critical
     annotations:
       summary: {{component.componentName}} service Alert
+
 {% endfor %}

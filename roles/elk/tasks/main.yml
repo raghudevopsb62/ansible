@@ -4,7 +4,6 @@
     tasks_from: logstash
   tags: logstash
 
-
 - name: Setup Filebeat
   ansible.builtin.import_role:
     name: elk

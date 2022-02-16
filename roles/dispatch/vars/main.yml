@@ -1,3 +1,6 @@
 COMPONENT: dispatch
 APPTYPE: app
 
+LOG_FILES:
+  - /var/log/dispatch.log
+LOGTYPE: raw

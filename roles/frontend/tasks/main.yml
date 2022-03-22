@@ -39,7 +39,7 @@
     enabled: yes
   when: strategy != "immutable"
 
-- name: Start Nginx
+- name: Enable Nginx
   ansible.builtin.systemd:
     name: nginx
     state: stopped

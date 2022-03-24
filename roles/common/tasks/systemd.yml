@@ -9,3 +9,10 @@
     state: restarted
     enabled: yes
     daemon_reload: yes
+
+- name: Stop {{COMPONENT}} service for Immutable tuning
+  when: strategy == "immutable"
+  ansible.builtin.systemd:
+    name: "{{COMPONENT}}"
+    state: stopped
+
